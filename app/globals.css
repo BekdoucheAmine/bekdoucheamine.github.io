@@ -1,122 +1,103 @@
-/* ------------------------------
-   Global Reset & Base Styles
---------------------------------*/
+@import "tailwindcss";
+
+/* -----------------------------------
+   Root Theme Variables
+----------------------------------- */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Optional: subtle accent colors */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+}
+
+/* Tailwind inline theme extension */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* -----------------------------------
+   Dark Mode
+----------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* -----------------------------------
+   Global Reset
+----------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* -----------------------------------
+   Base Styles
+----------------------------------- */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: #0d0d0d;
-  color: #f5f5f5;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ------------------------------
+/* -----------------------------------
    Typography
---------------------------------*/
+----------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: -0.5px;
-  color: #ffffff;
+  color: var(--foreground);
 }
 
 p {
-  color: #d4d4d4;
-  max-width: 70ch;
+  opacity: 0.85;
 }
 
-/* ------------------------------
+/* -----------------------------------
    Links
---------------------------------*/
+----------------------------------- */
 a {
-  color: #7dd3fc;
+  color: var(--accent);
   text-decoration: none;
-  transition: 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 a:hover {
-  color: #38bdf8;
+  color: var(--accent-hover);
 }
 
-/* ------------------------------
-   Layout Helpers
---------------------------------*/
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+/* -----------------------------------
+   Smooth Scroll
+----------------------------------- */
+html {
+  scroll-behavior: smooth;
 }
 
-/* ------------------------------
-   Buttons
---------------------------------*/
-button {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  background: #1f1f1f;
-  color: #fff;
-  transition: 0.25s ease;
-}
-
-button:hover {
-  background: #3a3a3a;
-}
-
-/* ------------------------------
-   Cards
---------------------------------*/
-.card {
-  background: #111;
-  border: 1px solid #1f1f1f;
-  padding: 1.5rem;
-  border-radius: 12px;
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  border-color: #38bdf8;
-  transform: translateY(-4px);
-}
-
-/* ------------------------------
-   Smooth Fade-in Animation
---------------------------------*/
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* ------------------------------
-   Subtle Scrollbar Styling
---------------------------------*/
+/* -----------------------------------
+   Scrollbar (subtle)
+----------------------------------- */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: rgba(120, 120, 120, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba(120, 120, 120, 0.5);
 }
