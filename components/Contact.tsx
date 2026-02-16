@@ -15,14 +15,14 @@ export default function Contact() {
         </p>
 
         <p>
-          GitHub: <a href="https://github.com/yourusername" className="text-blue-600">
-            github.com/yourusername
+          GitHub: <a href="https://github.com/BekdoucheAmine" className="text-blue-600">
+            @BekdoucheAmine
           </a>
         </p>
 
         <p>
-          LinkedIn: <a href="https://linkedin.com/in/yourprofile" className="text-blue-600">
-            linkedin.com/in/yourprofile
+          LinkedIn: <a href="https://www.linkedin.com/in/amine-bekdouche/" className="text-blue-600">
+            @BekdoucheAmine
           </a>
         </p>
       </div>
