@@ -6,19 +6,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
-  /* Optional: subtle accent colors */
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
 }
 
-/* Tailwind inline theme extension */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -34,60 +26,24 @@
 }
 
 /* -----------------------------------
-   Global Reset
------------------------------------ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* -----------------------------------
-   Base Styles
------------------------------------ */
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* -----------------------------------
-   Typography
------------------------------------ */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  color: var(--foreground);
-}
-
-p {
-  opacity: 0.85;
-}
-
-/* -----------------------------------
-   Links
------------------------------------ */
-a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-
-a:hover {
-  color: var(--accent-hover);
-}
-
-/* -----------------------------------
-   Smooth Scroll
+   Global Reset (Tailwind‑friendly)
 ----------------------------------- */
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* DO NOT reset margins/padding globally */
+/* Tailwind already handles this safely */
+
 /* -----------------------------------
-   Scrollbar (subtle)
+   Optional: subtle scrollbar
 ----------------------------------- */
 ::-webkit-scrollbar {
   width: 8px;
