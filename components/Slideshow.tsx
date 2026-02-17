@@ -54,7 +54,7 @@ export default function Slideshow({ slides }: { slides: Slide[] }) {
       {/* Pause/Play Button */}
       <button
         onClick={togglePause}
-        className="absolute bottom-4 right-1/2 translate-x-1/2 bg-white px-3 py-1 rounded z-20"
+        className="absolute bottom-4 left-1/2 translate-x-1/2 bg-white px-3 py-1 rounded z-20"
       >
         {paused ? "▶" : "⏸"}
       </button>
