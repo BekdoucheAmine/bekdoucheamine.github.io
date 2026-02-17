@@ -21,8 +21,7 @@ export default function Slideshow({ slides }: { slides: Slide[] }) {
   }, [paused, slides.length]);
 
   const next = () => setIndex((prev) => (prev + 1) % slides.length);
-  const prev = () =>
-    setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  const prev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
   const togglePause = () => setPaused((prev) => !prev);
 
   return (
@@ -57,7 +56,7 @@ export default function Slideshow({ slides }: { slides: Slide[] }) {
         onClick={togglePause}
         className="absolute bottom-4 right-1/2 translate-x-1/2 bg-white px-3 py-1 rounded z-20"
       >
-        {paused ? "Play" : "Pause"}
+        {paused ? "▶" : "⏸"}
       </button>
 
       {/* Caption */}
