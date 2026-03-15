@@ -1,4 +1,6 @@
-export const GetLatestProjects = ({ allProjects }) => {
+import { Project } from "@/data/ProjectList";
+
+export const GetLatestProjects = ({ allProjects }: { allProjects: Project[] }) => {
   const recentProjects = [...allProjects]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 3);

@@ -1,4 +1,13 @@
-export const BlogList = [
+export type Blog = {
+  id: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  link: string;
+  tags: string[];
+};
+
+export const BlogList: Blog[] = [
   {
     id: "b1",
     title: "Direct Memory Access via High-Performance AXI Ports (Simple Polling Example)",

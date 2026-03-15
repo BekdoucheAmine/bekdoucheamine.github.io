@@ -1,4 +1,13 @@
-export const ProjectList = [
+export type Project = {
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+  date: string;
+  technologies: string[];
+};
+
+export const ProjectList: Project[] = [
   {
     id: "1",
     title: "Monitoring & Validation FPGA",

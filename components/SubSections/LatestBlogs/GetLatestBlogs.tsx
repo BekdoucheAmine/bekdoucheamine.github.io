@@ -1,4 +1,6 @@
-export const GetLatestBlogs = ({ allBlogs }) => {
+import { Blog } from "@/data/BlogList";
+
+export const GetLatestBlogs = ({ allBlogs }: { allBlogs: Blog[] }) => {
   const recentBlogs = [...allBlogs]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 3);
