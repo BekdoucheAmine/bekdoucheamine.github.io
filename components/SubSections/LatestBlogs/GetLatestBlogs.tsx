@@ -2,7 +2,7 @@ import { Blog } from "@/data/BlogList";
 
 export const GetLatestBlogs = ({ allBlogs }: { allBlogs: Blog[] }) => {
   const recentBlogs = [...allBlogs]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
   return (

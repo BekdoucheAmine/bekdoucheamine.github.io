@@ -1,4 +1,4 @@
-export const SkillsGrid = ({ skills }) => {
+export const SkillsGrid = ({ skills }: { skills: string[] }) => {
   return (
     <div className="flex flex-wrap gap-2">
       {skills.map((skill) => (
