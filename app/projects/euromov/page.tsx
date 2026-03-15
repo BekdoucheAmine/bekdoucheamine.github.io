@@ -1,114 +1,149 @@
-import DemoViewer from "@/components/DemoViewer";
-import ProjectSlideshow from "@/components/ProjectSlideshow";
+import DemoViewer from "@/components/Project/DemoViewer";
+import ProjectSlideshow from "@/components/Project/ProjectSlideshow";
 
 export default function Project() {
+  const slides = [
+    { src: "/images/euromov/slides/Slide1.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide2.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide3.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide4.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide5.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide6.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide7.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide8.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide9.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide10.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide11.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide12.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide13.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide14.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide15.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide16.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide17.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide18.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide19.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide20.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide21.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide22.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide23.PNG", caption: "" },
+    { src: "/images/euromov/slides/Slide24.PNG", caption: "" },
+  ];
+
   return (
-    <main className="px-8 py-20 max-w-5xl mx-auto">
-
-      {/* HERO */}
-      <section className="mb-16">
-        <h1 className="text-5xl font-bold mb-6">
-          Développement et évaluation de capteurs de pression flexibles
+    <main className="px-8 py-20 max-w-5xl mx-auto space-y-24">
+      {/* HERO SECTION */}
+      <section className="flex flex-col items-start">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-6">
+          Flexible Pressure Sensor Research
         </h1>
-
-        <p className="text-lg text-gray-600 mb-8">
-          Projet de recherche visant à identifier, caractériser et comparer plusieurs
-          technologies de capteurs flexibles — dont Qvar, FlexiForce, Vélostat et la
-          peinture conductrice — pour la mesure de la raideur vertébrale en contexte clinique.
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mb-10 leading-relaxed">
+          A research project aimed at identifying, characterizing, and comparing various 
+          flexible sensor technologies (including Qvar, FlexiForce, Velostat, and 
+          conductive paint) to measure spinal stiffness in clinical settings.
         </p>
-
         <a
           href="/reports/euromov/report.pdf"
           download
-          className="inline-block bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition"
+          className="inline-flex items-center bg-foreground text-background px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition-all shadow-md"
         >
-          Télécharger le rapport complet
+          Download Full Technical Report - FR
         </a>
       </section>
 
       {/* SLIDESHOW */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-semibold mb-6">Présentation</h2>
-
-        <ProjectSlideshow
-          slides={[
-            { src: "/images/euromov/slides/Slide1.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide2.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide3.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide4.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide5.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide6.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide7.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide8.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide9.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide10.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide11.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide12.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide13.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide14.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide15.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide16.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide17.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide18.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide19.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide20.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide21.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide22.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide23.PNG", caption: "" },
-            { src: "/images/euromov/slides/Slide24.PNG", caption: "" },
-          ]}
-        />
+      <section className="p-8 bg-surface border border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm">
+        <h3 className="text-2xl font-bold text-foreground flex items-center gap-3 mb-8">
+          <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+          Project Presentation
+        </h3>
+        <ProjectSlideshow slides={slides} />
       </section>
 
-      {/* CONTEXTE */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4">Contexte scientifique</h2>
-        <p className="text-gray-700">
-          La lombalgie est un problème majeur de santé publique. Le diagnostic clinique
-          repose encore largement sur la palpation manuelle, une méthode subjective et
-          dépendante de l’opérateur. L’objectif du projet est de développer un capteur
-          flexible, fiable et reproductible permettant d’objectiver la mesure de la raideur
-          vertébrale, en s’appuyant sur des technologies capacitives, piézorésistives et
-          électrostatiques.
+      {/* DETAILS GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="p-8 bg-surface border border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm">
+          <h3 className="text-2xl font-bold text-foreground flex items-center gap-3 mb-6">
+            <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+            Scientific Context
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Low back pain is a major public health concern. Current clinical diagnosis 
+            relies heavily on manual palpation, a subjective method dependent on the 
+            practitioner. This project aims to develop a reliable, flexible sensor 
+            to objectively measure spinal stiffness.
+          </p>
+        </section>
+
+        <section className="p-8 bg-surface border border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm">
+          <h3 className="text-2xl font-bold text-foreground flex items-center gap-3 mb-6">
+            <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+            Technologies Studied
+          </h3>
+          <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+            {[
+              "FlexiForce: Printed piezoresistive sensor",
+              "Velostat: Conductive polymer film",
+              "BareConductive: Water-based conductive paint",
+              "Qvar: STMicroelectronics high-sensitivity electrostatic sensor"
+            ].map((tech, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <span className="text-blue-600">•</span> {tech}
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+
+      {/* EXPERIMENTAL SETUP */}
+      <section className="p-8 bg-surface border border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm">
+        <h3 className="text-2xl font-bold text-foreground flex items-center gap-3 mb-6">
+          <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+          Experimental Setup
+        </h3>
+        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+          The measurement system utilizes the STEVAL-MKI109V3 board paired with the Qvar module, 
+          a dielectric foam-based sensor structure, and a precision scale to correlate 
+          applied pressure with electrical output.
         </p>
       </section>
 
-      {/* TECHNOLOGIES */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4">Technologies étudiées</h2>
-        <p className="text-gray-700 mb-4">
-          Quatre technologies industrielles ont été sélectionnées pour comparaison :
-        </p>
-
-        <ul className="space-y-3 text-gray-700">
-          <li>• <strong>FlexiForce</strong> — capteur piézorésistif imprimé, fin et flexible</li>
-          <li>• <strong>Vélostat</strong> — film polymère conducteur à comportement piézorésistif</li>
-          <li>• <strong>Peinture BareConductive</strong> — matériau conducteur à base d’eau</li>
-          <li>• <strong>Qvar</strong> — capteur électrostatique haute sensibilité de STMicroelectronics</li>
+      {/* RESULTS */}
+      <section className="p-8 bg-surface border border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm">
+        <h3 className="text-2xl font-bold text-foreground flex items-center gap-3 mb-6">
+          <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+          Key Findings
+        </h3>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            "Reliable detection of finger-to-electrode distance via dielectric constant variation",
+            "Signal saturation during direct contact, requiring electrode isolation",
+            "Oscillation amplitude proportional to applied pressure",
+            "High sensitivity but significant environmental interference (50Hz, metallic masses)"
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
+              <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+              {item}
+            </li>
+          ))}
         </ul>
       </section>
 
-      {/* ARCHITECTURE / MONTAGE */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4">Montage expérimental</h2>
-        <p className="text-gray-700">
-          Le système de mesure repose sur une carte STEVAL-MKI109V3 associée au module
-          Qvar, une structure de capteur à base de mousse diélectrique, et une balance de
-          précision permettant de corréler la pression appliquée avec la réponse électrique.
-        </p>
-      </section>
-
-      {/* RESULTATS */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Résultats et conclusions</h2>
-        <ul className="space-y-3 text-gray-700">
-          <li>• Détection fiable de la distance doigt–électrodes via variation de constante diélectrique</li>
-          <li>• Saturation du signal lors du contact direct, nécessitant une isolation des électrodes</li>
-          <li>• Amplitude des oscillations proportionnelle à la pression appliquée</li>
-          <li>• Sensibilité élevée mais forte dépendance aux perturbations environnementales (50 Hz, masses métalliques, etc.)</li>
-        </ul>
-      </section>
-
+      {/* FOOTER: Next Steps */}
+      <footer className="pt-12 mt-12 border-t border-gray-100 dark:border-gray-800 flex justify-center gap-8">
+        <a 
+          href="/projects" 
+          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-colors"
+        >
+          ← Project Archive
+        </a>
+        
+        <a 
+          href="/" 
+          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-colors"
+        >
+          ← Home
+        </a>
+      </footer>
     </main>
   );
 }
