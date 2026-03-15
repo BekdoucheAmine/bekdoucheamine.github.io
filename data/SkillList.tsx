@@ -1,4 +1,9 @@
-export const CORE_SKILLS = [
+type SkillCategory = {
+  title: string;
+  skills: string[];
+};
+
+export const CORE_SKILLS: SkillCategory[] = [
   {
     title: "FPGA & Digital Design",
     skills: ["VHDL", "OSVVM", "AXI", "Avalon", "Cyclone SX", "Artix-7", "Zynq"]
@@ -9,7 +14,7 @@ export const CORE_SKILLS = [
   }
 ];
 
-export const TOOL_SKILLS = [
+export const TOOL_SKILLS: SkillCategory[] = [
   {
     title: "CAD Tools",
     skills: ["Vivado", "ModelSim", "Quartus", "MATLAB", "LabVIEW"]

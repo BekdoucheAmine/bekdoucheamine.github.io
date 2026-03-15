@@ -1,4 +1,4 @@
-import { CORE_SKILLS, TOOL_SKILLS } from "@/data/SkillList";
+import { SkillCategory, CORE_SKILLS, TOOL_SKILLS } from "@/data/SkillList";
 import { SkillsGrid } from "@/components/SubSections/Skills/SkillsGrid";
 
 export default function Skills() {
@@ -21,7 +21,7 @@ export default function Skills() {
 }
 
 // Consistent Theme-Aware Card Component
-const SkillCategoryCard = ({ title, items }) => (
+const SkillCategoryCard = ({ title, items }: { title: string; items: SkillCategory[] }) => (
   <div className="border border-gray-200 dark:border-gray-700/50 bg-background dark:bg-gray-950 p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300">
     <h3 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-100 dark:border-gray-800 pb-4">
       {title}
