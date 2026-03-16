@@ -79,7 +79,7 @@ export default function DmaHPSimplePoll() {
 
         {/* TECHNICAL SNIPPET: DMA Setup */}
         <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Configure the hardware</h3>
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Configure the hardware</h3>
           <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
           {`XAxiDma_Config *CfgPtr;
 CfgPtr = XAxiDma_LookupConfig(DeviceId);
@@ -93,10 +93,8 @@ if (Status != XST_SUCCESS) {
     return XST_FAILURE;
 }`}
             </pre>
-        </section>
-    
-        <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Disable interrupts for polling mode</h3>
+
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Disable interrupts for polling mode</h3>
           <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
           {`// s2mm_intr: Device to DMA (Memory) Interrupt
 XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
@@ -106,10 +104,8 @@ XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
 XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
                     XAXIDMA_DMA_TO_DEVICE);`}
             </pre>
-        </section>
 
-        <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Initiate the transfer</h3>
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Initiate the transfer</h3>
           <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
           {`// S2MM: Device to DMA (Memory)
 Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) RxBufferPtr,
