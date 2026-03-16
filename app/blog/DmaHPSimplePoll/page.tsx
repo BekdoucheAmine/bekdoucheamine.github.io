@@ -80,7 +80,7 @@ export default function DmaHPSimplePoll() {
         {/* TECHNICAL SNIPPET: DMA Setup */}
         <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Configure the hardware</h3>
-          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
+          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto mb-4">
           {`XAxiDma_Config *CfgPtr;
 CfgPtr = XAxiDma_LookupConfig(DeviceId);
 if (!CfgPtr) {
@@ -95,7 +95,7 @@ if (Status != XST_SUCCESS) {
             </pre>
 
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Disable interrupts for polling mode</h3>
-          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
+          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto mb-4">
           {`// s2mm_intr: Device to DMA (Memory) Interrupt
 XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
                     XAXIDMA_DEVICE_TO_DMA);
@@ -106,7 +106,7 @@ XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
             </pre>
 
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Initiate the transfer</h3>
-          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
+          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto mb-4">
           {`// S2MM: Device to DMA (Memory)
 Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) RxBufferPtr,
                                 MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
