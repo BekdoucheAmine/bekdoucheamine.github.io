@@ -102,7 +102,17 @@ XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
 
 // mm2s_intr: DMA (Memory) to Device Interrupt
 XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
-                    XAXIDMA_DMA_TO_DEVICE);`}
+                    XAXIDMA_DMA_TO_DEVICE);
+
+// Generate TxBuffer Data
+...
+'}
+<span className="text-emerald-400">
+{'
+// Flush the cache to ensure data coherency
+Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
+Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
+`}
             </pre>
 
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Initiate the transfer</h3>
@@ -113,7 +123,18 @@ Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) RxBufferPtr,
 
 // MM2S: DMA (Memory) to Device
 Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) TxBufferPtr,
-                                MAX_PKT_LEN, XAXIDMA_DMA_TO_DEVICE);`}
+                                MAX_PKT_LEN, XAXIDMA_DMA_TO_DEVICE);
+
+// Polling for completion
+while ((XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA)) ||
+			(XAxiDma_Busy(&AxiDma,XAXIDMA_DMA_TO_DEVICE))) {
+  /* Wait */
+}
+'}
+<span className="text-emerald-400">
+{'
+// Invalidate the cache to ensure data coherency
+Xil_DCacheInvalidateRange((UINTPTR)RxPacket, MAX_PKT_LEN);`}
           </pre>
         </section>
     
