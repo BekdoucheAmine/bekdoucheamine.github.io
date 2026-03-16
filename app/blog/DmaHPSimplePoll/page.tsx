@@ -79,7 +79,7 @@ export default function DmaHPSimplePoll() {
 
         {/* TECHNICAL SNIPPET: DMA Setup */}
         <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Disable interrupts for polling mode</h3>
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Configure the hardware</h3>
           <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
           {`XAxiDma_Config *CfgPtr;
 CfgPtr = XAxiDma_LookupConfig(DeviceId);
