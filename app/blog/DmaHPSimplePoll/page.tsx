@@ -79,19 +79,48 @@ export default function DmaHPSimplePoll() {
 
         {/* TECHNICAL SNIPPET: DMA Setup */}
         <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Code Pattern: Polling Setup</h3>
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Disable interrupts for polling mode</h3>
           <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
-          {`// Initialize DMA
+          {`XAxiDma_Config *CfgPtr;
+CfgPtr = XAxiDma_LookupConfig(DeviceId);
+if (!CfgPtr) {
+    xil_printf("No config found for %d\r\n", DeviceId);
+    return XST_FAILURE;
+}
 Status = XAxiDma_CfgInitialize(&AxiDma, CfgPtr);
+if (Status != XST_SUCCESS) {
+    xil_printf("Initialization failed %d\r\n", Status);
+    return XST_FAILURE;
+}`}
+            </pre>
+        </section>
+    
+        <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Disable interrupts for polling mode</h3>
+          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
+          {`// s2mm_intr: Device to DMA (Memory) Interrupt
+XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
+                    XAXIDMA_DEVICE_TO_DMA);
 
-// Disable interrupts for simple polling
-XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
-
-// Initiate transfer
-Status = XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR) RxBufferPtr, MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);`}
-          </pre>
+// mm2s_intr: DMA (Memory) to Device Interrupt
+XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
+                    XAXIDMA_DMA_TO_DEVICE);`}
+            </pre>
         </section>
 
+        <section className="p-8 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl shadow-inner">
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Initiate the transfer</h3>
+          <pre className="bg-black text-blue-400 p-6 rounded-xl font-mono text-sm overflow-x-auto">
+          {`// S2MM: Device to DMA (Memory)
+Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) RxBufferPtr,
+                                MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
+
+// MM2S: DMA (Memory) to Device
+Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) TxBufferPtr,
+                                MAX_PKT_LEN, XAXIDMA_DMA_TO_DEVICE);`}
+          </pre>
+        </section>
+    
         {/* RESULTS SECTION */}
         <section className="p-8 bg-surface border border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm">
           <h3 className="text-lg font-bold text-foreground mb-6">DMA Transfer DataCheck() Results</h3>
