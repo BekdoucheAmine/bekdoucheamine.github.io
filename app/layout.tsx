@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Amine Bekdouche – Portfolio",
-  description: "FPGA & Embedded Systems Engineer – Projects, Experience, and Skills",
+  description: "FPGA & Embedded Systems Engineer – Projects, Blogs, Experience, and Skills",
 };
 
 export default function RootLayout({
@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         {children}
       </body>

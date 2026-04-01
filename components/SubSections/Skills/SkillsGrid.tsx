@@ -10,7 +10,7 @@ export const SkillsGrid = ({ skills }: { skills: string[] }) => {
                      rounded-lg text-xs font-medium 
                      text-gray-600 dark:text-gray-300 
                      hover:border-blue-500 dark:hover:border-blue-400 
-                     hover:text-blue-600 dark:hover:text-blue-400 
+                     hover:text-emerald-600 dark:hover:text-emerald-400 
                      transition-all duration-300"
         >
           {skill}

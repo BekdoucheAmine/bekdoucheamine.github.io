@@ -25,13 +25,13 @@ export default function BlogPage() {
           >
             {/* Metadata: Date & Tags */}
             <div className="mb-6 flex justify-between items-start">
-              <span className="text-blue-600 dark:text-blue-400 font-mono text-xs">
+              <span className="text-emerald-600 dark:text-emerald-400 font-mono text-xs">
                 {post.date}
               </span>
             </div>
 
             {/* Title & Excerpt */}
-            <h2 className="text-2xl font-bold text-foreground mb-4 group-hover:text-blue-600 transition-colors">
+            <h2 className="text-2xl font-bold text-foreground mb-4 group-hover:text-emerald-600 transition-colors">
               {post.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 flex-grow">
@@ -55,7 +55,7 @@ export default function BlogPage() {
 
       {/* FOOTER: Next Steps */}
       <footer className="pt-12 border-t border-gray-100 dark:border-gray-800 text-center">
-        <a href="/" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+        <a href="/" className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">
           ← Home
         </a>
       </footer>

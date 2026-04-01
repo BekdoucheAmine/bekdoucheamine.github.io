@@ -33,7 +33,7 @@ const ContactLink = ({ label, href, value }: ContactLinkProps) => (
     className="block p-4 bg-background dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-2xl hover:border-blue-500 transition-all group"
   >
     <span className="block text-xs font-bold text-gray-400 uppercase mb-1">{label}</span>
-    <span className="text-sm font-medium text-foreground group-hover:text-blue-600 transition-colors">
+    <span className="text-sm font-medium text-foreground group-hover:text-emerald-600 transition-colors">
       {value}
     </span>
   </a>

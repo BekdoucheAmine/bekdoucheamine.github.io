@@ -21,7 +21,7 @@ export default function Profile() {
         </h1>
 
         {/* Using a theme-aware blue for contrast in both modes */}
-        <p className="text-2xl font-medium text-blue-600 dark:text-blue-400 mb-6">
+        <p className="text-2xl font-medium text-emerald-600 dark:text-emerald-400 mb-6">
           Electronic & Embedded Systems Engineer
         </p>
 

@@ -124,7 +124,7 @@ export default function Project() {
             "Minimal hardware footprint (<1% FPGA resources)"
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
-              <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-bold">•</span>
               {item}
             </li>
           ))}
@@ -135,14 +135,14 @@ export default function Project() {
       <footer className="pt-12 mt-12 border-t border-gray-100 dark:border-gray-800 flex justify-center gap-8">
         <a 
           href="/projects" 
-          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-colors"
+          className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline transition-colors"
         >
           ← Project Archive
         </a>
         
         <a 
           href="/" 
-          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-colors"
+          className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline transition-colors"
         >
           ← Home
         </a>

@@ -44,7 +44,7 @@ export default function DemoViewer({
 
         {/* Caption or Footer area inside the card */}
         <div className="mt-6 flex items-center justify-between">
-          <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest">
+          <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">
             {footer}
           </span>
         </div>

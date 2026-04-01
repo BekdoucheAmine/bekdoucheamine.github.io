@@ -22,7 +22,7 @@ export const GetLatestProjects = ({ allProjects }: { allProjects: Project[] }) =
               className="block p-5 border border-gray-100 dark:border-gray-800 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50/10 transition-all duration-300 group"
             >
               <div className="flex justify-between items-start">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-blue-600 transition">
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-emerald-600 transition">
                   {project.title}
                 </h3>
                 <span className="text-xs text-gray-400 font-mono">{project.date}</span>
@@ -49,7 +49,7 @@ export const GetLatestProjects = ({ allProjects }: { allProjects: Project[] }) =
         <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
           <a 
             href="/projects" 
-            className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-blue-600 transition"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-emerald-600 transition"
           >
             View all projects →
           </a>

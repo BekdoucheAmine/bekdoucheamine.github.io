@@ -87,7 +87,7 @@ export default function Project() {
               "Qvar: STMicroelectronics high-sensitivity electrostatic sensor"
             ].map((tech, i) => (
               <li key={i} className="flex items-center gap-3">
-                <span className="text-blue-600">•</span> {tech}
+                <span className="text-emerald-600">•</span> {tech}
               </li>
             ))}
           </ul>
@@ -121,7 +121,7 @@ export default function Project() {
             "High sensitivity but significant environmental interference (50Hz, metallic masses)"
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
-              <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-bold">•</span>
               {item}
             </li>
           ))}
@@ -132,14 +132,14 @@ export default function Project() {
       <footer className="pt-12 mt-12 border-t border-gray-100 dark:border-gray-800 flex justify-center gap-8">
         <a 
           href="/projects" 
-          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-colors"
+          className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline transition-colors"
         >
           ← Project Archive
         </a>
         
         <a 
           href="/" 
-          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-colors"
+          className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline transition-colors"
         >
           ← Home
         </a>
